@@ -38,8 +38,8 @@ public class Equipo {
 	 */
 	
 	public void jugadores() {
-		for(int i = 0; i < this.lista_jugadores.length; i++) {
-			System.out.println(this.lista_jugadores[i]);
+		for(String jugador : lista_jugadores) {
+			System.out.println(jugador);
 		}
 	}
 	
@@ -66,8 +66,13 @@ public class Equipo {
 	 */
 	
 	public int numero_jugadores() {
-		System.out.println("El número de jugadores es: " + this.lista_jugadores.length);
-		return this.lista_jugadores.length;
+		int contadorjugadores = 0;
+		for(String j : lista_jugadores) {
+			if(j != null) {
+				contadorjugadores++;
+			}
+		}
+		return contadorjugadores;
 	}
 	
 	/**
@@ -76,7 +81,7 @@ public class Equipo {
 	 * al menos 7 jugadores
 	 */
 	public boolean apto() {
-		if(this.lista_jugadores.length == 7) {
+		if(numero_jugadores() > 6 ) {
 			System.out.println("Si es apto");
 			return true;
 		}else {
