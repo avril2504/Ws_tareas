@@ -55,6 +55,12 @@ public class TarjetaGrafica {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+
+	@Override
+	public String toString() {
+		return "TarjetaGrafica [marca=" + marca + ", modelo=" + modelo + ", nucleosCUDA=" + nucleosCUDA + ", ram=" + ram
+				+ ", precio=" + precio + "]";
+	}
 	
 
 }

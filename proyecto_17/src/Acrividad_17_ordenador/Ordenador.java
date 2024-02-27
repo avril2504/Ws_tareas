@@ -80,9 +80,17 @@ public class Ordenador {
 	public void setListaPerifericos(ArrayList<Periferico> listaPerifericos) {
 		ListaPerifericos = listaPerifericos;
 	}
+	
+
+	@Override
+	public String toString() {
+		return "Ordenador [precio=" + precio + ", procesador=" + procesador + ", tarjetaGrafica=" + tarjetaGrafica
+				+ ", placaBase=" + placaBase + ", listaRAMs=" + listaRAMs + ", ListaPerifericos=" + ListaPerifericos
+				+ "]";
+	}
 
 
-	public void precioTotal() {
+	public void calcularPrecio() {
 		double suma = 0.0;
 		suma += this.procesador.getPrecio();
 		suma += this.tarjetaGrafica.getPrecio();
@@ -95,8 +103,9 @@ public class Ordenador {
 		for(Periferico periferico : this.ListaPerifericos) {
 			suma += periferico.getPrecio();
 		}
-		suma = this.precio;
-		System.out.println("El precio total del ordenador es:" + suma);
+		this.precio = suma + this.precio;
+		System.out.println("El precio total del ordenador es:" + this.precio);
+
 	}
 
 }

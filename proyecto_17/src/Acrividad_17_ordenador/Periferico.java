@@ -35,7 +35,10 @@ public class Periferico {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Periferico [tipo=" + tipo + ", marca=" + marca + ", precio=" + precio + "]";
+	}
 
 }

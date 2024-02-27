@@ -46,4 +46,11 @@ public class Procesador {
 		this.precio = precio;
 	}
 
+	@Override
+	public String toString() {
+		return "Procesador [marca=" + marca + ", modelo=" + modelo + ", nucleos=" + nucleos + ", precio=" + precio
+				+ "]";
+	}
+	
+
 }

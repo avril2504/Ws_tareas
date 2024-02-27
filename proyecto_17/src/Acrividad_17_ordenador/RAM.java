@@ -35,6 +35,11 @@ public class RAM {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+
+	@Override
+	public String toString() {
+		return "RAM [marca=" + marca + ", capacidad=" + capacidad + ", precio=" + precio + "]";
+	}
 	
 
 }
