@@ -89,18 +89,26 @@ public class Ordenador {
 				+ "]";
 	}
 
-
+	/**
+	 * Esto es JavaDoc y sirve para documentar métodos
+	 * Calcula el precio del ordenador basandose en los precios
+	 * de los componentes del mismo. Modifica el atributo
+	 * precio del ordenador
+	 * 
+	 * @throws NullPointerException si algun atributo apunta
+	 * a nulo
+	 */
 	public void calcularPrecio() {
 		double suma = 0.0;
-		suma += this.procesador.getPrecio();
-		suma += this.tarjetaGrafica.getPrecio();
-		suma += this.placaBase.getPrecio();
+		suma += procesador.getPrecio();
+		suma += tarjetaGrafica.getPrecio();
+		suma += placaBase.getPrecio();
 		
-		for(RAM ram : this.listaRAMs) {
+		for(RAM ram : listaRAMs) {
 			suma += ram.getPrecio();
 		}
 		
-		for(Periferico periferico : this.ListaPerifericos) {
+		for(Periferico periferico : ListaPerifericos) {
 			suma += periferico.getPrecio();
 		}
 		this.precio = suma + this.precio;
