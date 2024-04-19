@@ -61,7 +61,6 @@ public class Coche {
 	 */
 	public static void resetear() {
 		contadorID = 0;
-		contadorID = contadorID;
 		System.out.println(contadorID);
 	}
 }
