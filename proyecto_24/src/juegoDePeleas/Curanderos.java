@@ -12,6 +12,15 @@ public class Curanderos extends Personaje{
 	}
 
 	@Override
+	public int ArmaPersonaje() {
+        int bonus = 0;
+        if (getArma().getTipo() == tipoArma.REZO) {
+            bonus = 10; // Bonus para armas de guerreros
+        }
+        return (int) (getArma().getDanio() + bonus);
+	}
+
+	@Override
 	public void atacar(Personaje p) {
 		// TODO Auto-generated method stub
 		

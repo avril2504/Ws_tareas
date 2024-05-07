@@ -17,5 +17,6 @@ public class Arma {
 		this.danio = danio;
 	}
 	
+
 	
 }

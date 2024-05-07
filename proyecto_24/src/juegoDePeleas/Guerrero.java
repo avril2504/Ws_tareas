@@ -12,11 +12,20 @@ public class Guerrero extends Personaje{
 	}
 
 	@Override
+	public int ArmaPersonaje() {
+        int bonus = 0;
+        if (getArma().getTipo() == tipoArma.ESPADA || getArma().getTipo() == tipoArma.ARCO) {
+            bonus = 10; // Bonus para armas de guerreros
+        }
+        return (int) (getArma().getDanio() + bonus);
+    }
+	
+	@Override
 	public void atacar(Personaje p) {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
 
 }
+
+

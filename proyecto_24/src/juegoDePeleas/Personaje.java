@@ -24,5 +24,21 @@ public abstract class Personaje {
 	public void setPuntosVida(int puntosVida) {
 		this.puntosVida = puntosVida;
 	}	
-	public abstract void atacar(Personaje p);
+
+
+	public abstract int ArmaPersonaje();
+
+	
+	public void atacar(Personaje p) {
+		if(p.puntosVida <= 0 || this.puntosVida <= 0) {
+			System.out.println("No se puede atacar porque unos de los personajes"
+					+ "esta muerto");
+		}
+		
+		int danio = ArmaPersonaje();
+		
+		if(danio > 0) {
+			p.puntosVida -= danio;
+		}
+	}
 }
