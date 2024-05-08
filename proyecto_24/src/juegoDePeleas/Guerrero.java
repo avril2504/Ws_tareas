@@ -2,6 +2,12 @@ package juegoDePeleas;
 
 public class Guerrero extends Personaje{
 	private double fuerza;
+	
+
+	public Guerrero(String nombre, Arma arma, int puntosVida, double fuerza) {
+		super(nombre, arma, puntosVida);
+		this.fuerza = fuerza;
+	}
 
 	public double getFuerza() {
 		return fuerza;
@@ -25,6 +31,13 @@ public class Guerrero extends Personaje{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	protected boolean estaVivo() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 
 }
 

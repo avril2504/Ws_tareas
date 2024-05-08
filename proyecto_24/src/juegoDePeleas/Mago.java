@@ -1,6 +1,13 @@
 package juegoDePeleas;
 
 public class Mago extends Personaje{
+	
+
+	public Mago(String nombre, Arma arma, int puntosVida, double inteligencia) {
+		super(nombre, arma, puntosVida);
+		this.inteligencia = inteligencia;
+	}
+
 	private double inteligencia;
 
 	public double getInteligencia() {
@@ -25,6 +32,12 @@ public class Mago extends Personaje{
 	public void atacar(Personaje p) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	protected boolean estaVivo() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }

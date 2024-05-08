@@ -4,6 +4,12 @@ public class Arma {
 	private tipoArma tipo;
 	private double danio;
 	
+	
+	public Arma(tipoArma tipo, double danio) {
+		super();
+		this.tipo = tipo;
+		this.danio = danio;
+	}
 	public tipoArma getTipo() {
 		return tipo;
 	}

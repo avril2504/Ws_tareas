@@ -1,8 +1,15 @@
 package juegoDePeleas;
 
-public class Curanderos extends Personaje{
+public class Curandero extends Personaje{
+
 	private double sabiduria;
 
+	public Curandero(String nombre, Arma arma, int puntosVida, double sabiduria) {
+		super(nombre, arma, puntosVida);
+		// TODO Auto-generated constructor stub
+	}
+
+	
 	public double getSabiduria() {
 		return sabiduria;
 	}
@@ -25,6 +32,15 @@ public class Curanderos extends Personaje{
 		// TODO Auto-generated method stub
 		
 	}
+
+
+	@Override
+	protected boolean estaVivo() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
 	
 	
 }

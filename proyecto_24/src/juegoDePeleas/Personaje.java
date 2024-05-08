@@ -15,8 +15,8 @@ public abstract class Personaje {
 	public Arma getArma() {
 		return arma;
 	}
-	public void setArma(Arma arma) {
-		this.arma = arma;
+	public void setArma(Arma tipoArma) {
+		this.arma = tipoArma;
 	}
 	public int getPuntosVida() {
 		return puntosVida;
@@ -24,8 +24,13 @@ public abstract class Personaje {
 	public void setPuntosVida(int puntosVida) {
 		this.puntosVida = puntosVida;
 	}	
-
-
+	
+	public Personaje(String nombre, Arma arma, int puntosVida) {
+		super();
+		this.nombre = nombre;
+		this.arma = arma;
+		this.puntosVida = puntosVida;
+	}
 	public abstract int ArmaPersonaje();
 
 	
@@ -41,4 +46,6 @@ public abstract class Personaje {
 			p.puntosVida -= danio;
 		}
 	}
+	protected abstract boolean estaVivo();
+	
 }
