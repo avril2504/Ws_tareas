@@ -27,16 +27,24 @@ public class Guerrero extends Personaje{
     }
 	
 	@Override
-	public void atacar(Personaje p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected boolean estaVivo() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public boolean atacar(Personaje p) {
+        if (this.getPuntosVida() <= 0 || p.getPuntosVida() <= 0) {
+            System.out.println("No se puede atacar porque uno de los personajes está muerto");
+        }
+    		int danio = ArmaPersonaje();
+    		
+    		if(danio > 0) {
+    			int danioTotal = p.getPuntosVida() - danio;
+    			System.out.println("El Guerrero " + getNombre() + " va a hacer un daño de "
+						+ danioTotal + " a " + p.getNombre());
+    			if(p.getPuntosVida() > 0) {
+    				return true;
+    			}
+    		}else{
+    		System.out.println(getNombre() + " no puede atacar");
+    	}
+    	return false;
+    }
 
 
 }

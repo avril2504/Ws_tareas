@@ -4,6 +4,7 @@ public abstract class Personaje {
 	private String nombre;
 	private Arma arma;
 	private int puntosVida;
+
 	
 	
 	public String getNombre() {
@@ -34,18 +35,23 @@ public abstract class Personaje {
 	public abstract int ArmaPersonaje();
 
 	
-	public void atacar(Personaje p) {
-		if(p.puntosVida <= 0 || this.puntosVida <= 0) {
-			System.out.println("No se puede atacar porque unos de los personajes"
-					+ "esta muerto");
-		}
-		
-		int danio = ArmaPersonaje();
-		
-		if(danio > 0) {
-			p.puntosVida -= danio;
-		}
-	}
-	protected abstract boolean estaVivo();
-	
+	public boolean atacar(Personaje p) {
+        if (this.puntosVida <= 0 || p.puntosVida <= 0) {
+            System.out.println("No se puede atacar porque uno de los personajes está muerto");
+        }
+    		int danio = ArmaPersonaje();
+    		
+    		if(danio > 0) {
+    			int danioTotal = p.puntosVida - danio;
+    			System.out.println("El Personaje " + this.nombre + " va a hacer un daño de "
+						+ danioTotal + " a " + p.nombre);
+    			if(p.puntosVida > 0) {
+    				return true;
+    			}
+    		}else{
+    		System.out.println(this.nombre + " no puede atacar");
+    	}
+    	return false;
+    }
+
 }
