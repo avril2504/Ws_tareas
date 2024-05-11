@@ -28,23 +28,24 @@ public class Curandero extends Personaje{
 	}
 
 	@Override
-	public boolean atacar(Personaje p) {
-        if (this.getPuntosVida() <= 0 || p.getPuntosVida() <= 0) {
-            System.out.println("No se puede atacar porque uno de los personajes está muerto");
-        }
-    		int danio = ArmaPersonaje();
-    		
-    		if(danio > 0) {
-    			int danioTotal = p.getPuntosVida() - danio;
-    			System.out.println("El Curandero " + getNombre() + " va a hacer un daño de "
-						+ danioTotal + " a " + p.getNombre());
-    			if(p.getPuntosVida() > 0) {
-    				return true;
-    			}
-    		}else{
-    		System.out.println(getNombre() + " no puede atacar");
-    	}
-    	return false;
+	public void atacar(Personaje p) {
+	    if (this.getPuntosVida() <= 0 || p.getPuntosVida() <= 0) {
+	        System.out.println("No se puede atacar porque uno de los personajes está muerto");
+	    } else {
+	        int danio = ArmaPersonaje();
+	        
+	        if (danio > 0) {
+	            int danioTotal = p.getPuntosVida() - danio;
+	            if (danioTotal > 0) {
+	                p.setPuntosVida(danioTotal);
+	            } else {
+	                p.setPuntosVida(0); // Asegura que los puntos de vida no sean negativos
+	            }
+	            System.out.println("El Curandero " + getNombre() + " va a hacer un daño de "
+	                                + danio + " a " + p.getNombre());
+	        } else {
+	            System.out.println(getNombre() + " no puede atacar");
+	        }
+	    }
 	}
-	
 }
