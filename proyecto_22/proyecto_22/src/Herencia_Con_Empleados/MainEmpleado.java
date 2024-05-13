@@ -11,7 +11,8 @@ public class MainEmpleado {
     	System.out.println("Bienvenido");
     	System.out.println("Seleccione la opcion que desee");
         menu();
-    }
+
+        }
 
     public static void menu() {
         while (true) {
@@ -20,10 +21,12 @@ public class MainEmpleado {
             System.out.println("2. Mostrar empleados");
             System.out.println("3. Calcular salario de empleado");
             System.out.println("4. Calcular costes totales de la empresa");
-            System.out.println("5. Salir del programa");
+            System.out.println("5. Calcular despido Procedente");
+            System.out.println("6. Calcular despido Improcedente");
+            System.out.println("7. Salir del programa");
             
             int opcion = sc.nextInt();
-            if (opcion == 5) {
+            if (opcion == 7) {
                 System.out.println("Saliste del programa");
                 break;
             }
@@ -40,6 +43,12 @@ public class MainEmpleado {
                     break;
                 case 4:
                     calcularCostesTotalesDeLaEmpresa();
+                    break;
+                case 5:
+                    despidoProcedente();
+                    break;
+                case 6:
+                    despidoImprocedente();
                     break;
                 default:
                     System.out.println("Opción no válida. Inténtalo de nuevo.");
@@ -154,4 +163,20 @@ public class MainEmpleado {
         }
         System.out.println("El coste total de la empresa es: " + costesTotales);
     }
+    
+    public static void despidoImprocedente() {
+    	 double despido = 0;
+         for (Empleado empleado : empleados) {
+             despido = empleado.calcularDespidoImprocedente(2);
+         }
+         System.out.println("El despido es: " + despido);
+     }
+    public static void despidoProcedente() {
+   	 double despido = 0;
+        for (Empleado empleado : empleados) {
+            despido = empleado.calcularDespidoProcedente();
+        }
+        System.out.println("El despido es: " + despido);
+    }
+    
 }

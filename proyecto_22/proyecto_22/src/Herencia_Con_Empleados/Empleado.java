@@ -1,6 +1,6 @@
 package Herencia_Con_Empleados;
 
-public class Empleado {
+public class Empleado implements iDespido{
 	private int id;
 	private String dni;
 	private String nombre;
@@ -46,6 +46,28 @@ public class Empleado {
 		return sueldo_base;
 	}
 	
-	
-	
+
+	@Override
+	public double calcularDespidoProcedente() {
+		double despido = salarioTotal();
+		return despido;
+		
+	}
+
+	@Override
+	public double calcularDespidoImprocedente(int aniosTrabajados) {
+	    double salarioTotal = salarioTotal();
+
+
+	    if (this instanceof Director) {
+	        salarioTotal *= 1.20;
+	    }
+
+	    double incrementoPorAntiguedad = aniosTrabajados * 0.10 * salarioTotal;
+	    salarioTotal += incrementoPorAntiguedad;
+
+	    return salarioTotal;
+	}
+
+
 }
